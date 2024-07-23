@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CustomerAI Chatbot</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class="text-center my-4">Customer Ekranı</h1>
+                <div class="chat-window">
+                    <div class="chat-output" id="chat-output"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" id="user-input" class="form-control" placeholder="Sorunuzu yazın...">
+                        <div class="input-group-append">
+                            <button id="send-btn" class="btn btn-primary">Gönder</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="example-questions mt-4">
+                    <h5>Örnek Sorular:</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item example-question">Ürünüm nerede?</li>
+                        <li class="list-group-item example-question">Yanlış ürün siparişi verdim</li>
+                        <li class="list-group-item example-question">Kargolama ücreti var mı?</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1 class="text-center my-4">Chatbot Ekranı</h1>
+                <div class="chat-window">
+                    <div class="chat-output" id="bot-output"></div>
+                    <button id="download-report-btn" class="btn btn-info mt-2">PDF Olarak İndir</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <h2>Ürün Detayları</h2>
+                <div class="product">
+                    <img src="https://cdn.myikas.com/images/8fe27379-8098-43ef-b467-542f82fcfd32/30c50579-349e-414f-b24c-cbf2a7ea776d/3840/cuirro-378.webp" alt="Kadın Çantası" class="product-image">
+                    <img src="https://cdn.myikas.com/images/8fe27379-8098-43ef-b467-542f82fcfd32/21015225-1313-4760-91e0-2acb32408b18/3840/cuirro-366.webp" alt="Kadın Çantası" class="product-image">
+                    <img src="https://cdn.myikas.com/images/8fe27379-8098-43ef-b467-542f82fcfd32/47f0db81-a12f-4d32-9a56-3e49a15d1585/3840/cuirro-348.webp" alt="Kadın Çantası" class="product-image">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="product-details">
+                    <h3>Şık Kadın Çantası</h3>
+                    <p>Fiyat: 199.99 TL</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4>Yorumlar & Soru Cevap</h4>
+                <div class="comments" id="comments">
+                </div>
+                <div class="comment-buttons mt-3">
+                    <button class="btn btn-outline-primary btn-sm comment-question" data-question="Ürün fiyatına kargo dahil mi?">Kargo dahil mi?</button>
+                    <button class="btn btn-outline-primary btn-sm comment-question" data-question="Beden boyutu nedir?">Beden boyutu</button>
+                    <button class="btn btn-outline-primary btn-sm comment-question" data-question="Teslimat süresi nedir?">Teslimat süresi</button>
+                </div>
+                <div class="input-group mt-3">
+                    <input type="text" id="comment-input" class="form-control" placeholder="Yorumunuzu yazın...">
+                    <div class="input-group-append">
+                        <button id="comment-btn" class="btn btn-primary">Yorum Yap</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
